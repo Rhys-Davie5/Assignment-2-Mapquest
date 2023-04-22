@@ -24,4 +24,9 @@ while True:
         print("Directions from " + (orig) + " to " + (dest))
         print("Trip Duration: " + (json_data["route"]["formattedTime"]))
         print("Miles: " + str(json_data["route"]["distance"]))
+
+        if "realTimeTraffic" in json_data["route"]:
+            print("Traffic: " + json_data["route"]["realTimeTraffic"]["congestionSeverity"])
+        else:
+            print("Traffic information not available for this route.")
         
