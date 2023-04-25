@@ -30,3 +30,10 @@ while True:
         else:
             print("Traffic information not available for this route.")
         
+        print("\nStep-by-step Directions:")
+        for maneuver in json_data["route"]["legs"][0]["maneuvers"]:
+            print(maneuver["narrative"])
+
+    else:
+        print("API Status: " + str(json_status) + " = An unsuccessful route call.\n")
+
